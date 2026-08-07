@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Top Rated page - ranking list, rating bars, stats and movie of the month
+   ========================================================================== */
+
+.rank-list { display: grid; gap: 16px; }
+.rank-item {
+  display: grid; grid-template-columns: 74px 92px 1fr; gap: 20px; align-items: center;
+  padding: 16px 20px;
+}
+.rank-num {
+  font-size: 2.5rem; font-weight: 800; line-height: 1; text-align: center;
+  background: var(--grad-primary); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.rank-item:nth-child(1) .rank-num,
+.rank-item:nth-child(2) .rank-num,
+.rank-item:nth-child(3) .rank-num {
+  background: var(--grad-gold); -webkit-background-clip: text; background-clip: text;
+}
+.rank-item .poster { border-radius: var(--radius-sm); }
+.rank-title { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+.rank-title h3 { font-size: 1.08rem; font-weight: 600; }
+.rank-meta { color: var(--muted); font-size: .84rem; margin-top: 2px; }
+
+/* Animated rating bar */
+.bar { height: 8px; border-radius: 8px; background: rgba(255,255,255,.10); overflow: hidden; margin-top: 12px; }
+body.light .bar { background: rgba(16,20,26,.10); }
+.bar i {
+  display: block; height: 100%; width: 0; border-radius: 8px;
+  background: var(--grad-gold); transition: width 1.2s cubic-bezier(.2,.8,.2,1);
+}
+.bar-label { display: flex; justify-content: space-between; font-size: .78rem; color: var(--muted); margin-top: 6px; }
+
+/* Movie of the month */
+.motm {
+  display: grid; grid-template-columns: 300px 1fr; gap: 34px; align-items: center;
+  padding: 34px; border-radius: 26px; border: 1px solid var(--border);
+  background: linear-gradient(135deg, rgba(255,215,0,.10), rgba(229,9,20,.14));
+  backdrop-filter: blur(12px);
+}
+.motm h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight: 800; margin: 8px 0 10px; }
+.motm p { color: var(--muted); }
+.motm-facts { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 24px; }
+.motm-facts span {
+  padding: 7px 15px; border-radius: 40px; font-size: .8rem;
+  background: var(--card); border: 1px solid var(--border);
+}
+
+/* Statistics cards */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; }
+.stat { text-align: center; padding: 30px 20px; }
+.stat .ico {
+  width: 56px; height: 56px; margin: 0 auto 14px; border-radius: 18px; display: grid; place-items: center;
+  font-size: 1.5rem; background: var(--grad-primary); box-shadow: 0 10px 24px rgba(229,9,20,.35);
+}
+.stat b { font-size: 2.2rem; font-weight: 800; color: var(--accent); display: block; line-height: 1.1; }
+.stat span { color: var(--muted); font-size: .9rem; }
+
+@media (max-width: 780px) {
+  .motm { grid-template-columns: 1fr; }
+  .motm .poster { max-width: 240px; margin-inline: auto; }
+  .rank-item { grid-template-columns: 46px 66px 1fr; gap: 12px; padding: 14px; }
+  .rank-num { font-size: 1.7rem; }
+}
+
+/* Keep poster text readable in the small ranking thumbnails */
+.rank-item .poster { padding: 8px; }
+.rank-item .poster-title { font-size: .78rem; }
+.rank-item .poster-year { font-size: .58rem; letter-spacing: .08em; }

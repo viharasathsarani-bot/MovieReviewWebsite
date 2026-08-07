@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineVerse | Movie Reviews, Ratings &amp; Top Rated Films</title>
+  <meta name="description" content="CineVerse is a cinematic movie review hub with trending films, honest community reviews, genre browsing and monthly top rated rankings.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ================= NAVIGATION ================= -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo"><span class="logo-mark">🎬</span> Cine<b>Verse</b></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="movies.html">Movies</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="top-rated.html">Top Rated</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark and light mode">☀️</button>
+        <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SLIDER ================= -->
+  <section class="hero">
+    <div class="hero-slides"></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-tag">★ Featured this week</span>
+        <h1 id="heroTitle">Now Streaming</h1>
+        <div class="hero-meta" id="heroMeta"></div>
+        <p class="lead" id="heroDesc"></p>
+        <div class="hero-actions">
+          <a href="movies.html" class="btn btn-primary">▶ Browse Movies</a>
+          <a href="reviews.html" class="btn btn-ghost">Read Reviews</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-dots"></div>
+  </section>
+
+  <!-- ================= WELCOME ================= -->
+  <section class="section">
+    <div class="container welcome-grid">
+      <div class="welcome-copy reveal left">
+        <span class="section-head eyebrow" style="display:inline-block">Welcome to CineVerse</span>
+        <h2>Reviews written by people who actually <span style="color:var(--primary)">watch</span> the movies.</h2>
+        <p>No studio spin, no paid rankings. CineVerse collects honest reactions from a community of film lovers and turns them into ratings you can trust. Track what is trending, dig into genres and save your own verdicts.</p>
+        <div class="welcome-stats">
+          <div><b>15+</b><span>Movies</span></div>
+          <div><b>4.8K</b><span>Reviews</span></div>
+          <div><b>6</b><span>Genres</span></div>
+        </div>
+        <a href="movies.html" class="btn btn-primary" style="margin-top:26px">Start exploring</a>
+      </div>
+      <div class="welcome-art reveal right" id="welcomeArt"></div>
+    </div>
+  </section>
+
+  <!-- ================= TRENDING ================= -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Hot right now</span>
+        <h2 class="section-title">Trending <span>Movies</span></h2>
+        <p class="section-sub">The titles our community is rating and arguing about this week.</p>
+      </div>
+      <div class="rail" id="trendingRail"></div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED REVIEWS ================= -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">From the community</span>
+        <h2 class="section-title">Featured <span>Reviews</span></h2>
+        <p class="section-sub">A few of the most helpful reviews posted on CineVerse.</p>
+      </div>
+      <div class="review-rail" id="featuredReviews"></div>
+      <div style="text-align:center;margin-top:32px" class="reveal">
+        <a href="reviews.html" class="btn btn-ghost">See all reviews</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CATEGORIES ================= -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Browse by mood</span>
+        <h2 class="section-title">Movie <span>Categories</span></h2>
+      </div>
+      <div class="cats" id="catGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= CALL TO ACTION ================= -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="cta reveal zoom">
+        <h2>Seen something great lately?</h2>
+        <p>Add your rating and review in under a minute. Your verdict helps thousands of viewers pick their next film.</p>
+        <div class="cta-actions">
+          <a href="reviews.html" class="btn btn-primary">Write a review</a>
+          <a href="top-rated.html" class="btn btn-gold">See top rated</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo"><span class="logo-mark">🎬</span> Cine<b>Verse</b></a>
+          <p style="margin-top:14px">Honest movie reviews, curated rankings and a community of film lovers. Every rating is written by real viewers.</p>
+          <div class="socials">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="Instagram">◉</a>
+            <a href="#" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="top-rated.html">Top Rated</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Genres</h4>
+          <ul class="footer-links">
+            <li><a href="movies.html">Action</a></li>
+            <li><a href="movies.html">Comedy</a></li>
+            <li><a href="movies.html">Horror</a></li>
+            <li><a href="movies.html">Drama</a></li>
+            <li><a href="movies.html">Sci-Fi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Newsletter</h4>
+          <p>Weekly picks, new reviews and cinema news in your inbox.</p>
+          <form class="newsletter" id="newsletterForm" novalidate>
+            <input type="email" placeholder="you@email.com" aria-label="Email address">
+            <button class="btn btn-primary" type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> CineVerse. All rights reserved.</span>
+        <span>Made for film lovers &bull; HTML5 &bull; CSS3 &bull; Vanilla JS</span>
+      </div>
+    </div>
+  </footer>
+  <button class="to-top" aria-label="Scroll to top">↑</button>
+  <script src="js/script.js"></script>
+</body>
+</html>

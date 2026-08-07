@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Reviews page - review cards and the submission form
+   ========================================================================== */
+
+.reviews-layout { display: grid; grid-template-columns: 1.55fr 1fr; gap: 34px; align-items: start; }
+
+.review-list { display: grid; gap: 20px; }
+.rcard { display: grid; grid-template-columns: 110px 1fr; gap: 18px; padding: 18px; }
+.rcard .poster { border-radius: var(--radius-sm); }
+.rcard h3 { font-size: 1.05rem; font-weight: 600; }
+.rcard .rhead { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; }
+.rcard .rtext { color: var(--muted); font-size: .9rem; margin-top: 10px; }
+.rcard .rfoot {
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between;
+  margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); font-size: .82rem; color: var(--muted);
+}
+.rcard .who { display: flex; align-items: center; gap: 10px; }
+.badge-user {
+  padding: 3px 10px; border-radius: 40px; font-size: .68rem; font-weight: 700;
+  background: rgba(46, 204, 113, .15); color: #2ecc71; border: 1px solid rgba(46, 204, 113, .3);
+}
+.delete-btn {
+  background: none; border: 1px solid var(--border); color: var(--muted);
+  padding: 5px 12px; border-radius: 40px; cursor: pointer; font-size: .78rem; transition: var(--transition);
+}
+.delete-btn:hover { color: var(--primary); border-color: var(--primary); }
+
+/* Submission form (sticky on desktop) */
+.form-card { padding: 26px; position: sticky; top: 100px; }
+.form-card h2 { font-size: 1.3rem; font-weight: 700; }
+.form-card > p { color: var(--muted); font-size: .88rem; margin-bottom: 20px; }
+
+/* Interactive star picker */
+.star-picker { display: flex; gap: 6px; font-size: 1.7rem; cursor: pointer; }
+.star-picker span { color: rgba(255, 255, 255, .22); transition: var(--transition); }
+body.light .star-picker span { color: rgba(16, 20, 26, .18); }
+.star-picker span.on { color: var(--accent); transform: scale(1.12); }
+
+.filter-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+
+@media (max-width: 960px) {
+  .reviews-layout { grid-template-columns: 1fr; }
+  .form-card { position: static; }
+}
+@media (max-width: 520px) {
+  .rcard { grid-template-columns: 82px 1fr; gap: 12px; padding: 14px; }
+}
+
+/* Small poster thumbnails inside review cards */
+.rcard .poster { padding: 8px; }
+.rcard .poster-title { font-size: .8rem; }
+.rcard .poster-year { font-size: .58rem; letter-spacing: .08em; }
