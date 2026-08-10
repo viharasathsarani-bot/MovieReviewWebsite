@@ -66,3 +66,7 @@ body.light .bar { background: rgba(16,20,26,.10); }
 .rank-item .poster { padding: 8px; }
 .rank-item .poster-title { font-size: .78rem; }
 .rank-item .poster-year { font-size: .58rem; letter-spacing: .08em; }
+
+/* Real posters in the small ranking thumbnails speak for themselves */
+.rank-item .poster.has-photo .poster-title,
+.rank-item .poster.has-photo .poster-year { display: none; }
