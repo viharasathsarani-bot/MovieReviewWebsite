@@ -68,15 +68,15 @@ const HERO_IDS = [2, 5, 3, 8];
 
 /** Build the poster markup for a movie, using its real image if it has one. */
 function posterHTML(movie, badge) {
-  // Real posters are set as background-image directly on the element (resolves
-  // relative to this page, exactly like an <img src>). The gradient fallback
-  // still goes through the --poster-grad variable/::before layer since it has
-  // no url() to worry about.
-  const style = movie.poster
-    ? `background-image:url('images/${encodeURI(movie.poster)}');background-size:cover;background-position:center`
-    : `--poster-grad:${movie.grad || 'linear-gradient(150deg,#2b2f3a,#11151b)'}`;
+  // Real posters render as a dedicated <img> layer, because the ::before /
+  // ::after CSS artwork paints on top of the element's own background.
+  const grad = movie.grad || 'linear-gradient(150deg,#2b2f3a,#11151b)';
+  const photo = movie.poster
+    ? `<img class="poster-photo" src="images/${encodeURI(movie.poster)}" alt="${movie.title} poster" loading="lazy">`
+    : '';
   return `
-    <div class="poster" style="${style}">
+    <div class="poster${movie.poster ? ' has-photo' : ''}" style="--poster-grad:${grad}">
+      ${photo}
       ${badge ? `<span class="poster-badge">${badge}</span>` : ''}
       <div>
         <div class="poster-title">${movie.title}</div>
@@ -84,6 +84,7 @@ function posterHTML(movie, badge) {
       </div>
     </div>`;
 }
+
 
 /** Convert a 0-10 rating into 5 star characters. */
 function starsFromRating(rating) {
