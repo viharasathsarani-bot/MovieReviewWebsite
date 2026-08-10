@@ -50,3 +50,7 @@ body.light .star-picker span { color: rgba(16, 20, 26, .18); }
 .rcard .poster { padding: 8px; }
 .rcard .poster-title { font-size: .8rem; }
 .rcard .poster-year { font-size: .58rem; letter-spacing: .08em; }
+
+/* Real posters in the small review thumbnails speak for themselves */
+.rcard .poster.has-photo .poster-title,
+.rcard .poster.has-photo .poster-year { display: none; }
